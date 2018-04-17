@@ -1,0 +1,5 @@
+set editing-mode vi
+set keymap vi
+
+"gh":beginning-of-line
+"gl":end-of-line

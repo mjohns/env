@@ -1,0 +1,12 @@
+#!/usr/bin/python
+#
+# Copyright 2012 Google Inc. All Rights Reserved.
+# Author: mjohns@google.com (Michael Johns)
+
+import commands
+
+s,output=commands.getstatusoutput('git5 diff -c diff --name-only')
+split=output.split('\n')
+for line in split:
+    if line[:8] == "google3/":
+      print line[8:]

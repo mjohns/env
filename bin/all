@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cmd="grepall --regex=$@ `cat ~/g5dirs.txt`"
+cmd="ag -i --nogroup -p ~/.agignore $@"
+$cmd
