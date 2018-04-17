@@ -1,7 +1,4 @@
 #!/usr/bin/python
-#
-# Copyright 2012 Google Inc. All Rights Reserved.
-# Author: mjohns@google.com (Michael Johns)
 
 import commands
 
