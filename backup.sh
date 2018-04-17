@@ -13,3 +13,4 @@ cp -f ~/.inputrc config/.inputrc
 cp -f ~/.ideavimrc config/.ideavimrc
 cp -f ~/.imwheelrc config/.imwheelrc
 cp -f ~/.imwheelrc config/.imwheelrc
+cp -f ~/.tmux.conf config/.tmux.conf
