@@ -1,5 +1,4 @@
 #!/usr/bin/python
-# List the edited git files and add a shortcut to commit them all
 
 import commands
 import sys
@@ -23,7 +22,7 @@ for line in split:
       cmds.append("git rm " + tokens[1])
 
 
-if len(cmds) > 0 and len(sys.argv) > 2 and "-c" == sys.argv[1]:
+if len(cmds) > 0 and len(sys.argv) > 2 and ("c" == sys.argv[1] or "-c" == sys.argv[1]):
   for cmd in cmds:
     os.system(cmd)
 
