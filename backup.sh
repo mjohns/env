@@ -1,16 +1,19 @@
 #!/bin/bash
 
-cp -f ~/bin/find_imports bin/find_imports
-cp -f ~/bin/find_imports_grep.sh bin/find_imports_grep.sh
-cp -f ~/bin/tgo bin/tgo
-cp -f ~/bin/all bin/all
-cp -f ~/bin/i bin/i
-cp -f ~/bin/gls bin/gls
-cp -f ~/bin/g5ls bin/g5ls
+cp -f ~/bin/find_imports bin
+cp -f ~/bin/find_imports_grep.sh bin
+cp -f ~/bin/tgo bin
+cp -f ~/bin/all bin
+cp -f ~/bin/i bin
+cp -f ~/bin/gls bin
+cp -f ~/bin/g5ls bin
 
-cp -f ~/.vimrc config/.vimrc
-cp -f ~/.inputrc config/.inputrc
-cp -f ~/.ideavimrc config/.ideavimrc
-cp -f ~/.imwheelrc config/.imwheelrc
-cp -f ~/.imwheelrc config/.imwheelrc
-cp -f ~/.tmux.conf config/.tmux.conf
+cp -f ~/.vimrc config
+cp -f ~/.inputrc config
+cp -f ~/.ideavimrc config
+cp -f ~/.imwheelrc config
+cp -f ~/.imwheelrc config
+cp -f ~/.tmux.conf config
+cp -f /usr/share/X11/xorg.conf.d/50-mtrack.conf config
+cp -f /usr/share/X11/xorg.conf.d/50-synaptics.conf config
+cp -f /usr/share/X11/xorg.conf.d/90-evoluent-verticalmouse4.conf config
