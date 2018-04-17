@@ -1,0 +1,41 @@
+let mapleader=","
+map gl $
+map gh ^
+map gk [{
+map gj ]}
+map <tab> =
+noremap x "_x
+
+vmap J j
+vmap K k
+
+map s z
+map S s
+map sh <C-o>
+map sl :action VimForward<CR>
+map SH :action JumpToLastChange<CR>
+map SL :action JumpToNextChange<CR>
+
+set incsearch
+set hlsearch
+set number
+set smartcase
+set scrolloff=6
+set wildmode=longest:full
+set wildmenu
+set ic
+
+map <leader>a :action FindInPath<CR>
+map <leader>e :action Blaze.OpenCorrespondingBuildFile<CR>
+map <leader>t :action GotoTest<CR>
+map <leader>f :action GotoFile<CR>
+map <leader>b :action RecentFiles<CR>
+map <leader>r :action ReloadFromDisk<CR>
+map <leader>c :action FindUsages<CR>
+map <leader>x :action CloseContent<CR>
+map <leader>n :action GotoNextError<CR>
+map <leader>v :action VimVisualToggleBlockMode<CR>
+
+"map SL :action GotoNextError<CR>
+"map SH :action GotoPreviousError<CR>
+map <leader>m ciwthis.<esc>pa = <esc>pa;<esc>
