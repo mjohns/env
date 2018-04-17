@@ -37,8 +37,6 @@ autocmd BufNewFile,BufRead * set tw=2000
 
 let mapleader=","
 
-command! Jade !/google/data/ro/teams/jade/jade %
-
 Glug blaze
 
 map <leader>t :tabn<CR>
@@ -66,63 +64,6 @@ nmap <leader>r :RunCmd
 nmap <leader>x :call RunCmd("g4 edit " . expand("<C-r>%"))<CR>
 nmap <leader>a :call RunCmdWithHistory("all " . expand("<cword>"))<CR>
 
-" Eclim
-"let g:EclimFileTypeValidate = 1
-"let g:SuperTabDefaultCompletionType = "context"
-"let g:EclimJavaSearchSingleResult = "edit"
-"let g:EclimCSearchSingleResult = "edit"
-"let g:EclimCCallHierarchyDefaultAction = "edit"
-" performance
-"let g:EclimShowCurrentError = 0
-"let g:EclimShowQuickfixSigns = 0
-"let g:EclimShowLoclistSigns = 0
-"let g:EclimQuickfixSignText = 0
-"let g:EclimLoclistSignText = 0
-"let g:EclimUserSignText = 0
-"let g:EclimUserSignHighlight = 0
-"let g:EclimSignLevel = 0
-"map <leader>d :CSearchContext<CR>
-"map <leader>c :CCallHierarchy<CR>
-
 map <leader>m :call ShiftBuffer()<CR>
 
-" switch back to the previously loaded file
-map zb <C-^>
-
-nmap <leader>i :call FindImports(expand("<cword>"))<CR>
-function! FindImports(name)
-  call histadd("cmd", "FindImports " . a:name)
-  call RunCmd("find_imports " . a:name)
-  if !&modifiable
-    map <buffer> <Enter> Yqggjpsh
-  endif
-endfunction
-command! -nargs=1 FindImports :call FindImports("<args>")
-
-function! RunCmd2(name)
-  edit temporary_buffer
-  setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile nowrap
-  setlocal modifiable
-  map <buffer> <Enter> gF
-  map <buffer> q <C-^>
-  map <buffer> :q q
-  exe "silent r!" . a:name
-  etlocal nomodifiable
-endfunction
-
-map ss oif (status != Status::SUCCESS) {<CR>return status;<CR>}<CR>
-
 set verbosefile=~/vim.log
-
-augroup Binary
-  au!
-  au BufReadPre  *.glb,*.bin,*.BIN,*.exe,*.o,*.obj,*.OBJ,*.rom,*.ROM let &bin=1
-  au BufReadPost *.glb,*.bin,*.BIN,*.exe,*.o,*.obj,*.OBJ,*.rom,*.ROM if &bin | %!xxd -g1
-  au BufReadPost *.glb,*.bin,*.BIN,*.exe,*.o,*.obj,*.OBJ,*.rom,*.ROM set ft=xxd | endif
-  au BufWritePre *.glb,*.bin,*.BIN,*.exe,*.o,*.obj,*.OBJ,*.rom,*.ROM if &bin | %!xxd -r
-  au BufWritePre *.glb,*.bin,*.BIN,*.exe,*.o,*.obj,*.OBJ,*.rom,*.ROM endif
-  au BufWritePost *.glb,*.bin,*.BIN,*.exe,*.o,*.obj,*.OBJ,*.rom,*.ROM if &bin | %!xxd -g1
-  au BufWritePost *.glb,*.bin,*.BIN,*.exe,*.o,*.obj,*.OBJ,*.rom,*.ROM set nomod | endif
-augroup END
-
-
