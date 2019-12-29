@@ -12,11 +12,13 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Bundle 'L9'
-Bundle 'FuzzyFinder'
+Bundle 'mjohns/FuzzyFinder'
 Plugin 'mjohns/list'
 Plugin 'mjohns/vimenv'
 Plugin 'vim-misc'
 Bundle 'altercation/vim-colors-solarized'
+Plugin 'kana/vim-operator-user'
+Plugin 'rhysd/vim-clang-format'
 
 
 " All of your Plugins must be added before the following line
@@ -31,21 +33,16 @@ filetype plugin indent on    " required
 " " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-source /usr/share/vim/google/google.vim
 " prevent auto line wrapping that comes from google.vim
 autocmd BufNewFile,BufRead * set tw=2000
 
 let mapleader=","
-
-Glug blaze
 
 map <leader>t :tabn<CR>
 set showtabline=0
 
 " open the BUILD file in the dir for the current file
 map <leader>e :e %%/BUILD<CR>
-
-map <leader>d :BlazeLoadErrors<CR>:copen<CR>
 
 " set up find and run commands:
 " ,f - search for all files matching the pattern given.  A trailing * is
@@ -56,9 +53,9 @@ map <leader>d :BlazeLoadErrors<CR>:copen<CR>
 "
 " ,r - run an arbitrary shell command and have the output displayed in a temp
 "      buffer
-command! -nargs=1 Find :call RunCmdAutoOpen("fa <args>")
+command! -nargs=1 Find :call RunCmdAutoOpen("i <args>")
 nmap <leader>f :Find 
-nmap <leader>g :call RunCmdWithHistory("fa " . expand("<cword>"))<CR>
+nmap <leader>g :call RunCmdWithHistory("i " . expand("<cword>"))<CR>
 command! -nargs=1 RunCmd :call RunCmd("<args>")
 nmap <leader>r :RunCmd 
 nmap <leader>x :call RunCmd("g4 edit " . expand("<C-r>%"))<CR>
@@ -67,3 +64,9 @@ nmap <leader>a :call RunCmdWithHistory("all " . expand("<cword>"))<CR>
 map <leader>m :call ShiftBuffer()<CR>
 
 set verbosefile=~/vim.log
+
+map <C-f> :ClangFormat<CR>
+
+set backupdir=.backup/,~/.backup/,/tmp//
+set directory=.swp/,~/.swp/,/tmp//
+set undodir=.undo/,~/.undo/,/tmp//
