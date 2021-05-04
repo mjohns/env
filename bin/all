@@ -1,5 +1,64 @@
 #!/bin/bash
 
-cmd="grepall --regex=$@ `cat ~/g5dirs.txt`"
+regex=$@
+first_regex=`echo $regex | cut -d. -f1`
+
+regex="${regex/.v/ | grep -v -i }"
+regex="${regex/.v/ | grep -v -i }"
+regex="${regex/.v/ | grep -v -i }"
+regex="${regex/.v/ | grep -v -i }"
+regex="${regex/.v/ | grep -v -i }"
+regex="${regex/.v/ | grep -v -i }"
+regex="${regex/.v/ | grep -v -i }"
+regex="${regex/.v/ | grep -v -i }"
+regex="${regex/.v/ | grep -v -i }"
+regex="${regex/.v/ | grep -v -i }"
+regex="${regex/.v/ | grep -v -i }"
+regex="${regex/.v/ | grep -v -i }"
+regex="${regex/.v/ | grep -v -i }"
+regex="${regex/.v/ | grep -v -i }"
+regex="${regex/.v/ | grep -v -i }"
+regex="${regex/.v/ | grep -v -i }"
+regex="${regex/.v/ | grep -v -i }"
+regex="${regex/.v/ | grep -v -i }"
+regex="${regex/.v/ | grep -v -i }"
+regex="${regex/.v/ | grep -v -i }"
+regex="${regex/.v/ | grep -v -i }"
+regex="${regex/.v/ | grep -v -i }"
+regex="${regex/./ | grep -i }"
+regex="${regex/./ | grep -i }"
+regex="${regex/./ | grep -i }"
+regex="${regex/./ | grep -i }"
+regex="${regex/./ | grep -i }"
+regex="${regex/./ | grep -i }"
+regex="${regex/./ | grep -i }"
+regex="${regex/./ | grep -i }"
+regex="${regex/./ | grep -i }"
+regex="${regex/./ | grep -i }"
+regex="${regex/./ | grep -i }"
+regex="${regex/./ | grep -i }"
+regex="${regex/./ | grep -i }"
+regex="${regex/./ | grep -i }"
+regex="${regex/./ | grep -i }"
+regex="${regex/./ | grep -i }"
+regex="${regex/./ | grep -i }"
+regex="${regex/./ | grep -i }"
+regex="${regex/./ | grep -i }"
+regex="${regex/./ | grep -i }"
+regex="${regex/./ | grep -i }"
+regex="${regex/./ | grep -i }"
+regex="${regex/./ | grep -i }"
+regex="${regex/./ | grep -i }"
+regex="${regex/./ | grep -i }"
+regex="${regex/./ | grep -i }"
+
+if [ "$regex" == "$first_regex" ]; then
+  extra_grep=""
+else
+  extra_grep=" | grep -i $regex"
+fi
+
 cmd="ag -i --nogroup -p ~/.agignore $@"
-$cmd
+
+cmd="ag -i --nogroup -p ~/.agignore $first_regex $extra_grep"
+eval $cmd | sort_ag.py
