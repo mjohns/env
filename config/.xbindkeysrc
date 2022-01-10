@@ -1,0 +1,4 @@
+"wmctrl -a chrome"
+   Control+Alt+Mod4 + m
+"wmctrl -xa terminator.Terminator"
+   Control+Alt+Mod4 + y
