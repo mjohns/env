@@ -1,5 +1,11 @@
 #!/bin/bash
 
+if [ $# -lt 1 ]
+then
+  echo "No Args"
+  exit 1
+fi
+
 regex=$@
 first_regex=`echo $regex | cut -d. -f1`
 
@@ -58,8 +64,15 @@ else
   extra_grep=" | grep -i $regex"
 fi
 
-for path in `cat ~/hg_dirs`; do
-  cmd="ag -i --nogroup -p ~/.agignore $first_regex $path $extra_grep"
-  cmd="rg -i -n $first_regex $path $extra_grep"
-  eval $cmd | sort_ag.py
-done
+dir=`pwd`
+if [[ $dir =~ ^/google/.*/google3$ ]]
+then
+  for path in `cat ~/hg_dirs`; do
+    cmd="ag -i --nogroup -p ~/.agignore $first_regex $path $extra_grep"
+    cmd="rg -i -n $first_regex $path $extra_grep"
+    eval $cmd | sort_ag.py
+  done
+fi
+
+cmd="rg -i -n $first_regex $extra_grep"
+eval $cmd | sort_ag.py
