@@ -25,6 +25,11 @@ if len(cmds) > 0 and len(sys.argv) > 1 and ("-a" == sys.argv[1]):
   for cmd in cmds:
     os.system(cmd)
 
+if len(cmds) > 0 and len(sys.argv) > 1 and ("-c" == sys.argv[1]):
+  for cmd in cmds:
+    os.system(cmd)
+  os.system("git commit")
+
 if len(cmds) > 0 and len(sys.argv) > 2 and ("c" == sys.argv[1] or "-c" == sys.argv[1]):
   for cmd in cmds:
     os.system(cmd)
