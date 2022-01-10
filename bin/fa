@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [ $# -eq 0 ]
+then
+  echo "No Args"
+  exit 1
+fi
+
+for dir in `cat ~/hg_dirs`; do
+  find $dir -iname \*$1\*
+done

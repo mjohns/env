@@ -1,7 +1,17 @@
 #!/bin/bash
-if [ $# -gt 0 ]
+
+if [ $# -lt 1 ]
 then
-  find . -iname $1\*
-else
   echo "No Args"
+  exit 1
 fi
+
+dir=`pwd`
+
+if [[ $dir =~ ^/google/.*/google3$ ]]
+then
+  fa $1
+  exit 0
+fi
+
+find . -iname $1\*
