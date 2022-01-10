@@ -8,6 +8,13 @@ noremap x "_x
 
 vmap J j
 vmap K k
+map v V
+map y Y
+map <PageDown> <C-d>
+map <PageUp> <C-u>
+map <leader>q :wq<CR>
+map <leader>w :w<CR>
+noremap ; :
 
 map s z
 map S s
@@ -39,3 +46,4 @@ map <leader>v :action VimVisualToggleBlockMode<CR>
 "map SL :action GotoNextError<CR>
 "map SH :action GotoPreviousError<CR>
 map <leader>m ciwthis.<esc>pa = <esc>pa;<esc>
+map ss ciwthis.<esc>pa = <esc>pa;<esc>

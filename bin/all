@@ -58,7 +58,8 @@ else
   extra_grep=" | grep -i $regex"
 fi
 
-cmd="ag -i --nogroup -p ~/.agignore $@"
-
-cmd="ag -i --nogroup -p ~/.agignore $first_regex $extra_grep"
-eval $cmd | sort_ag.py
+for path in `cat ~/hg_dirs`; do
+  cmd="ag -i --nogroup -p ~/.agignore $first_regex $path $extra_grep"
+  cmd="rg -i -n $first_regex $path $extra_grep"
+  eval $cmd | sort_ag.py
+done
