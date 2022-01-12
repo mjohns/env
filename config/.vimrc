@@ -16,9 +16,9 @@ Bundle 'mjohns/FuzzyFinder'
 Plugin 'mjohns/list'
 Plugin 'mjohns/vimenv'
 Plugin 'vim-misc'
-Bundle 'altercation/vim-colors-solarized'
-Plugin 'kana/vim-operator-user'
-Plugin 'rhysd/vim-clang-format'
+Bundle 'mjohns/vim-colors-solarized'
+Plugin 'mjohns/vim-operator-user'
+Plugin 'mjohns/vim-clang-format'
 
 
 " All of your Plugins must be added before the following line
