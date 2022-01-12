@@ -43,6 +43,7 @@ export EDITOR='vim'
 # https://github.com/larkery/zsh-histdb
 source $HOME/.oh-my-zsh/custom/plugins/zsh-histdb/sqlite-history.zsh
 autoload -Uz add-zsh-hook
+
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=180'
 
 # zsh-vi-mode

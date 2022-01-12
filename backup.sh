@@ -12,8 +12,8 @@ cp -f ~/bin/sort_ag.py bin
 cp -f ~/.vimrc config
 cp -f ~/.zshrc config
 cp -f ~/.config/nvim/init.vim config
-cp -f ~/.xkeybindsrc config
-cp -f ~/.config/terminator/confi config/terminator_config
+cp -f ~/.xbindkeysrc config
+cp -f ~/.config/terminator/config config/terminator_config
 cp -f ~/.inputrc config
 cp -f ~/.ideavimrc config
 cp -f ~/.imwheelrc config
