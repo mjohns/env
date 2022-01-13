@@ -26,7 +26,7 @@ ZSH_THEME="gnzh"
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-plugins=(zsh-autosuggestions git zsh-vi-mode)
+plugins=(zsh-autosuggestions git zsh-fzf-history-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -46,11 +46,11 @@ autoload -Uz add-zsh-hook
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=180'
 
-# zsh-vi-mode
-function zvm_after_lazy_keybindings() {
-  zvm_bindkey vicmd 'gh' beginning-of-line
-  zvm_bindkey vicmd 'gl' end-of-line
-}
+bindkey -v
+bindkey -M vicmd 'gh' beginning-of-line
+bindkey -M vicmd 'gl' end-of-line
+# from zsh-fzf-history-search
+bindkey '^R' fzf_history_search
 KEYTIMEOUT=1
 
 alias pbcopy="xsel --clipboard --input"

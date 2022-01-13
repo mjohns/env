@@ -107,6 +107,10 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+if [ -f ~/.my_aliases ]; then
+    . ~/.my_aliases
+fi
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -127,3 +131,7 @@ alias rm='rm -i'
 export TERM="xterm-256color"
 
 
+PATH="$HOME/.local/bin:$PATH"
+
+alias pbcopy="xsel --clipboard --input"
+alias pbpaste="xsel --clipboard --output"

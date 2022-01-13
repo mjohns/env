@@ -11,6 +11,7 @@ cp -f ~/bin/sort_ag.py bin
 
 cp -f ~/.vimrc config
 cp -f ~/.zshrc config
+cp -f ~/.bashrc config
 cp -f ~/.config/nvim/init.vim config
 cp -f ~/.xbindkeysrc config
 cp -f ~/.config/terminator/config config/terminator_config
