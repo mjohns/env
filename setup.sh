@@ -15,6 +15,7 @@ function install_deps {
     zsh \
     sqlite3 \
     xsel \
+    imwheel \
     silversearcher-ag \
     terminator
 }
@@ -47,6 +48,7 @@ function install_env {
   cp env/config/.zshrc ~
   cp env/config/.clang-format ~
   cp env/config/.xbindkeysrc ~
+  cp env/config/.imwheelrc ~
 
   cp env/bin/tgo ~/bin
   cp env/bin/gls ~/bin

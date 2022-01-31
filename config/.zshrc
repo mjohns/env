@@ -8,7 +8,7 @@ ZSH_THEME="gnzh"
 # simple, eastwood, minimal
 
 # Uncomment one of the following lines to change the auto-update behavior
-# zstyle ':omz:update' mode disabled  # disable automatic updates
+zstyle ':omz:update' mode disabled  # disable automatic updates
 # zstyle ':omz:update' mode auto      # update automatically without asking
 # zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
@@ -36,6 +36,7 @@ source $ZSH/oh-my-zsh.sh
 
 export LANG=en_US.UTF-8
 export EDITOR='vim'
+export TERM=xterm-256color
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -43,6 +44,8 @@ export EDITOR='vim'
 # https://github.com/larkery/zsh-histdb
 source $HOME/.oh-my-zsh/custom/plugins/zsh-histdb/sqlite-history.zsh
 autoload -Uz add-zsh-hook
+#source $HOME/.oh-my-zsh/custom/plugins/zsh-histdb/histdb-interactive.zsh
+#bindkey '^R' _histdb-isearch
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=180'
 
@@ -56,3 +59,5 @@ KEYTIMEOUT=1
 alias pbcopy="xsel --clipboard --input"
 alias pbpaste="xsel --clipboard --output"
 alias vim="nvim"
+alias cp='cp -i'
+alias rm='rm -i'
