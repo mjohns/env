@@ -15,6 +15,7 @@ map <PageUp> <C-u>
 map <leader>q :wq<CR>
 map <leader>w :w<CR>
 noremap ; :
+map <C-k> <C-w><C-w>
 
 map s z
 map S s
@@ -37,7 +38,7 @@ map <leader>e :action Blaze.OpenCorrespondingBuildFile<CR>
 map <leader>t :action GotoTest<CR>
 map <leader>f :action GotoFile<CR>
 map <leader>b :action RecentFiles<CR>
-map <leader>r :action ReloadFromDisk<CR>
+map <leader>r :action RenameElement<CR>
 map <leader>c :action FindUsages<CR>
 map <leader>x :action CloseContent<CR>
 map <leader>n :action GotoNextError<CR>
@@ -47,3 +48,9 @@ map <leader>v :action VimVisualToggleBlockMode<CR>
 "map SH :action GotoPreviousError<CR>
 map <leader>m ciwthis.<esc>pa = <esc>pa;<esc>
 map ss ciwthis.<esc>pa = <esc>pa;<esc>
+
+nnoremap gn :action GotoNextError<CR>
+nnoremap gp :action GotoPreviousError<CR>
+
+set visualbell
+set noerrorbells
